@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
@@ -14,9 +14,27 @@ public class Bullet : MonoBehaviour
     [SerializeField]
     private float speed = 5;
 
+    private Tilemap map;
+
+    private int currentX;
+
+    public void Init(Tilemap map)
+    {
+        this.map = map;
+        currentX = getX(map);
+    }
+
     private void FixedUpdate()
     {
         transform.Translate(speed * Time.fixedDeltaTime, 0, 0);
+        var coor = map.WorldToCell(transform.position);
+
+        if (!map.HasTile(coor))
+        {
+            Destroy(gameObject);
+            return;
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -31,4 +49,10 @@ public class Bullet : MonoBehaviour
                 break;
         }
     }
+
+    private int getX(Tilemap map)
+    {
+        return map.WorldToCell(transform.position).x;
+    }
+
 }
