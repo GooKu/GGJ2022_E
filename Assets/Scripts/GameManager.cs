@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         ShowScore();
         m_CountdownSystem.GameResultEvent += SetGameResultAndGoToResultScene;
 
-        if(so.GameMode == GameMode.StoryMod)
+        if(so.GameMode == GameMode.StoryMode)
         {
             var autoPlayer = gameObject.AddComponent<AutoPlayer>();
             autoPlayer.Bind(p2.Player);
