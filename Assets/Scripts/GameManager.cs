@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         var setting = player.Player == PlayerType.P1 ? p1 : p2;
         var bullet = GameObject.Instantiate(setting.bullet, setting.Player.transform.position, Quaternion.identity);
+        bullet.OnTileChangeEvent += UpdateTile;
         bullet.Init(map);
     }
 }

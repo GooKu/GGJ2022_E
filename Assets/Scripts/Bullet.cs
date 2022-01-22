@@ -6,8 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class Bullet : MonoBehaviour
 {
-    private event Action<Bullet> OnHitBulletEvent;
-    private event Action<Bullet, PlayerControl> OnHitPlayerEvent;
+    public event Action<Vector3Int, PlayerType> OnTileChangeEvent;
+    public event Action<Bullet> OnHitBulletEvent;
+    public event Action<Bullet, PlayerControl> OnHitPlayerEvent;
 
     [SerializeField]
     private PlayerType playerType;
@@ -21,7 +22,9 @@ public class Bullet : MonoBehaviour
     public void Init(Tilemap map)
     {
         this.map = map;
-        currentX = getX(map);
+        var coor = map.WorldToCell(transform.position);
+        currentX = coor.x;
+        OnTileChangeEvent?.Invoke(coor, playerType);
     }
 
     private void FixedUpdate()
@@ -35,6 +38,11 @@ public class Bullet : MonoBehaviour
             return;
         }
 
+        if(coor.x != currentX)
+        {
+            OnTileChangeEvent?.Invoke(coor, playerType);
+            coor.x = currentX;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -49,10 +57,4 @@ public class Bullet : MonoBehaviour
                 break;
         }
     }
-
-    private int getX(Tilemap map)
-    {
-        return map.WorldToCell(transform.position).x;
-    }
-
 }
