@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class InputManager : MonoBehaviour
 {
     [SerializeField] private Tilemap m_Tilemap;
+    [SerializeField] private PlayerControl m_PlayerControl;
 
     public void InputGroupEvent(PlayerType playerType)
     {
@@ -23,11 +24,11 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-
+            m_PlayerControl.MoveUp();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-
+            m_PlayerControl.MoveDown();
         }
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
@@ -39,20 +40,15 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-
+            m_PlayerControl.MoveUp();
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-
+            m_PlayerControl.MoveDown();
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
 
         }
-    }
-
-    private void Move(Vector2 direction)
-    {
-        
     }
 }
