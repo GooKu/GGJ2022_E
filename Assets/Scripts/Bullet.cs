@@ -58,7 +58,13 @@ public class Bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case Tags.Player:
-                OnHitPlayerEvent?.Invoke(this, collision.gameObject.GetComponent<PlayerControl>());
+                var player = collision.gameObject.GetComponent<PlayerControl>();
+
+                if (player.Player == Player) { return; }
+
+                OnHitPlayerEvent?.Invoke(this, player);
+
+                Destroy(gameObject);
                 break;
         }
     }
