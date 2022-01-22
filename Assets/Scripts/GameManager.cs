@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,21 @@ using UnityEngine.Tilemaps;
 
 public class GameManager : MonoBehaviour
 {
+    [Serializable]
+    public class PlayerSettings
+    {
+        public PlayerControl Player;
+        public TileBase Tile;
+        public Bullet bullet;
+        public int Score;
+    }
+
     [SerializeField]
     private Tilemap map = null;
     [SerializeField]
-    private TileBase p1Tile = null;
+    private PlayerSettings p1 = null;
     [SerializeField]
-    private TileBase p2Tile = null;
-
-    private int p1Score;
-    private int p2Score;
+    private PlayerSettings p2 = null;
 
     private void Start()
     {
@@ -22,26 +29,31 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
-        p1Score = p2Score = 9 * 8;
+        p1.Score =p2.Score = 9 * 8;
     }
 
     public void UpdateTile(Vector3Int coor, PlayerType player)
     {
         var tile = map.GetTile(coor);
-        var compareTile = player == PlayerType.P1 ? p1Tile : p2Tile;
+        var playerSetting = player == PlayerType.P1 ? p1 : p2;
 
-        if(tile == compareTile) { return; }
+        if(tile == playerSetting.Tile) { return; }
 
-        map.SetTile(coor, compareTile);
+        map.SetTile(coor, playerSetting.Tile);
 
         if(player == PlayerType.P1)
         {
-            p1Score += 1;
-            p2Score -= 1;
+            p1.Score += 1;
+            p2.Score -= 1;
             return;
         }
 
-        p1Score -= 1;
-        p2Score += 1;
+        p1.Score -= 1;
+        p2.Score += 1;
+    }
+
+    private void shoot(PlayerControl player)
+    {
+        //TODO
     }
 }

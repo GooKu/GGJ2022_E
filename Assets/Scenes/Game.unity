@@ -374,8 +374,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 2070239020}
-  p1Tile: {fileID: 11400000, guid: 80eea937dda61e7438b54e442258a806, type: 2}
-  p2Tile: {fileID: 11400000, guid: 01153086dbba7ce49a779dd06bc9ec5f, type: 2}
+  p1:
+    Player: {fileID: 401596092}
+    Tile: {fileID: 11400000, guid: 80eea937dda61e7438b54e442258a806, type: 2}
+    bullet: {fileID: 7076829832064178155, guid: f74b9f4a2b19abc4cbc7afb929349391, type: 3}
+    Score: 0
+  p2:
+    Player: {fileID: 1421870574}
+    Tile: {fileID: 11400000, guid: 01153086dbba7ce49a779dd06bc9ec5f, type: 2}
+    bullet: {fileID: 1942705317306466046, guid: ff48cd5fcb0758c40b622c7eddcd5669, type: 3}
+    Score: 0
 --- !u!114 &1421870574 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6436378043141642355, guid: a2b3832f9722e964f99b3f7accd555ce, type: 3}
