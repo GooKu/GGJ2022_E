@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CountdownSystem : MonoBehaviour
 {
+    [SerializeField] private SceneController m_SceneController;
     [SerializeField] private float m_TotalTime;
     private float m_CurrentTime;
 
@@ -24,6 +25,6 @@ public class CountdownSystem : MonoBehaviour
     public IEnumerator StartCountdown()
     {
         yield return new WaitUntil(() => m_CurrentTime <= 0);
-        Debug.Log("Wait complete");
+        m_SceneController.SwitchScene("StoryGameOver");
     }
 }
