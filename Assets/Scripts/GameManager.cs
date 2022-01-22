@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private Tilemap map = null;
+    [SerializeField]
+    private TileBase p1Tile = null;
+    [SerializeField]
+    private TileBase p2Tile = null;
 
     private int p1Score;
     private int p2Score;
@@ -21,9 +25,10 @@ public class GameManager : MonoBehaviour
         p1Score = p2Score = 9 * 8;
     }
 
-    public void UpdateTile(Vector2Int pos, PlayerType player)
+    public void UpdateTile(Vector3Int coor, PlayerType player)
     {
-        //TODO: update tile color
+        map.SetTile(coor, player == PlayerType.P1 ? p1Tile : p2Tile); ;
+
         if(player == PlayerType.P1)
         {
             p1Score += 1;
