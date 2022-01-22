@@ -553,13 +553,13 @@ MonoBehaviour:
   p1:
     Player: {fileID: 401596092}
     Tile: {fileID: 11400000, guid: 80eea937dda61e7438b54e442258a806, type: 2}
-    bullet: {fileID: 7076829832064178155, guid: f74b9f4a2b19abc4cbc7afb929349391, type: 3}
+    bullet: {fileID: 5493674230767784991, guid: 8a7e0c1ffcc76c641b78e09154adf3a4, type: 3}
     ScoreText: {fileID: 1628584863}
     Score: 0
   p2:
     Player: {fileID: 1421870574}
     Tile: {fileID: 11400000, guid: 01153086dbba7ce49a779dd06bc9ec5f, type: 2}
-    bullet: {fileID: 1942705317306466046, guid: ff48cd5fcb0758c40b622c7eddcd5669, type: 3}
+    bullet: {fileID: 164814665960893356, guid: ed92d866ed922814d9324ae344b09456, type: 3}
     ScoreText: {fileID: 1551525146}
     Score: 0
 --- !u!1 &1286325154
