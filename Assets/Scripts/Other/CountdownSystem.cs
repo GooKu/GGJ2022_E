@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,6 @@ public class CountdownSystem : MonoBehaviour
 
     public IEnumerator StartCountdown()
     {
-        yield return WaitUntil(m_CurrentTime == 0);
+        yield return new WaitUntil(() => m_CurrentTime == 0);
     }
-
 }
