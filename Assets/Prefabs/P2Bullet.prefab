@@ -11,10 +11,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: P2Bullet
       objectReference: {fileID: 0}
+    - target: {fileID: 6603694255693655483, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603694255693655483, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 2.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6603694255693655484, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
       propertyPath: playerType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6603694255693655485, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 49ffad4160d6d0a429a8f56922e400cd, type: 3}
     - target: {fileID: 6603694255693655485, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -30,6 +42,10 @@ PrefabInstance:
     - target: {fileID: 6603694255693655486, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6603694255693655486, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6603694255693655486, guid: 4074d18555bb47441b490b9db8b1a81c, type: 3}
       propertyPath: m_LocalPosition.x
