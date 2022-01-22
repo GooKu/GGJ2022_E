@@ -7,8 +7,9 @@ using UnityEngine.Tilemaps;
 public class Bullet : MonoBehaviour
 {
     public event Action<Vector3Int, PlayerType> OnTileChangeEvent;
-    public event Action<Bullet> OnHitBulletEvent;
     public event Action<Bullet, PlayerControl> OnHitPlayerEvent;
+
+    public PlayerType Player => playerType;
 
     [SerializeField]
     private PlayerType playerType;
@@ -45,12 +46,16 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         switch (collision.gameObject.tag)
         {
             case Tags.Bullet:
-                OnHitBulletEvent?.Invoke(this);
+                var bullet = collision.gameObject.GetComponent<Bullet>();
+
+                if(bullet.Player == Player) { return; }
+
+                Destroy(gameObject);
                 break;
             case Tags.Player:
                 OnHitPlayerEvent?.Invoke(this, collision.gameObject.GetComponent<PlayerControl>());
