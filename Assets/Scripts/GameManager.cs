@@ -24,12 +24,14 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Init();
+        Init(p1);
+        Init(p2);
     }
 
-    public void Init()
+    public void Init(PlayerSettings setting)
     {
-        p1.Score =p2.Score = 9 * 8;
+        setting.Score = 9 * 8;
+        setting.Player.OnShootEvent += shoot;
     }
 
     public void UpdateTile(Vector3Int coor, PlayerType player)
@@ -54,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     private void shoot(PlayerControl player)
     {
+        var setting = player.Player == PlayerType.P1 ? p1 : p2;
+        var bullet = GameObject.Instantiate(setting.bullet, setting.Player.transform.position, Quaternion.identity);
         //TODO
     }
 }

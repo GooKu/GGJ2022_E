@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine.Tilemaps;
 
 public class PlayerControl : MonoBehaviour
 {
+    public event Action<PlayerControl> OnShootEvent;
+
     [SerializeField] private PlayerType m_Player = PlayerType.P1;
     [SerializeField] private InputManager m_InputManager;
     [SerializeField] private Tilemap m_Tilemap;
@@ -61,7 +64,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Shoot()
     {
-        Debug.Log(m_Player.ToString() + "Shooting");
+        OnShootEvent?.Invoke(this);
     }
 
 }
