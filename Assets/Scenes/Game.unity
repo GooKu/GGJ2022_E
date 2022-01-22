@@ -366,7 +366,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad06a3e4d4a91434d9b7c29591bcfa8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
+  map: {fileID: 2070239020}
+  p1Tile: {fileID: 11400000, guid: 80eea937dda61e7438b54e442258a806, type: 2}
+  p2Tile: {fileID: 11400000, guid: 01153086dbba7ce49a779dd06bc9ec5f, type: 2}
 --- !u!1 &1023989942
 GameObject:
   m_ObjectHideFlags: 0
