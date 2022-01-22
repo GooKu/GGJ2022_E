@@ -27,7 +27,12 @@ public class GameManager : MonoBehaviour
 
     public void UpdateTile(Vector3Int coor, PlayerType player)
     {
-        map.SetTile(coor, player == PlayerType.P1 ? p1Tile : p2Tile); ;
+        var tile = map.GetTile(coor);
+        var compareTile = player == PlayerType.P1 ? p1Tile : p2Tile;
+
+        if(tile == compareTile) { return; }
+
+        map.SetTile(coor, compareTile);
 
         if(player == PlayerType.P1)
         {
