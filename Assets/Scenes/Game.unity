@@ -564,6 +564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad06a3e4d4a91434d9b7c29591bcfa8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  so: {fileID: 11400000, guid: c66755a202217024199958f951eade2e, type: 2}
   map: {fileID: 2070239020}
   p1:
     Player: {fileID: 401596092}
@@ -609,6 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 636c195f417bc7546b92166351497167, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  so: {fileID: 0}
 --- !u!4 &1286325156
 Transform:
   m_ObjectHideFlags: 0

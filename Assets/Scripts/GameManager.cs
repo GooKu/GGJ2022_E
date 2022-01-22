@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
             ScoreText.text = Score.ToString();
         }
     }
-
+    [SerializeField]
+    private GameModeSO so = null;
     [SerializeField]
     private Tilemap map = null;
     [SerializeField]
@@ -40,6 +41,13 @@ public class GameManager : MonoBehaviour
         Init(p2);
         ShowScore();
         m_CountdownSystem.GameResultEvent += SetGameResultAndGoToResultScene;
+
+        if(so.GameMode == GameMode.StoryMod)
+        {
+            var autoPlayer = gameObject.AddComponent<AutoPlayer>();
+            autoPlayer.Bind(p2.Player);
+            autoPlayer.Run();
+        }
     }
 
     public void Init(PlayerSettings setting)

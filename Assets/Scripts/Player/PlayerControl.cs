@@ -19,7 +19,7 @@ public class PlayerControl : MonoBehaviour
 
     public PlayerType Player { get => m_Player; set => m_Player = value; }
 
-    private bool isCd;
+    public bool IsCd { get; private set; }
 
 
     private void Start()
@@ -67,7 +67,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Shoot()
     {
-        if (isCd) { return; }
+        if (IsCd) { return; }
 
         OnShootEvent?.Invoke(this);
 
@@ -76,9 +76,9 @@ public class PlayerControl : MonoBehaviour
 
     private IEnumerator coolDown()
     {
-        isCd = true;
+        IsCd = true;
         yield return new WaitForSeconds(shootCd);
-        isCd = false;
+        IsCd = false;
     }
 
 }
