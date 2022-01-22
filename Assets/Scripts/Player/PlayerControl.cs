@@ -13,10 +13,13 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private Tilemap m_Tilemap;
     [SerializeField] private int m_TopTilemap = 4;
     [SerializeField] private int m_ButtonTilemap = -4;
+    [SerializeField] private float shootCd = .5f;
 
     private Vector3Int m_CurrentPlayerPosition;
 
     public PlayerType Player { get => m_Player; set => m_Player = value; }
+
+    private bool isCd;
 
 
     private void Start()
@@ -64,7 +67,18 @@ public class PlayerControl : MonoBehaviour
 
     public void Shoot()
     {
+        if (isCd) { return; }
+
         OnShootEvent?.Invoke(this);
+
+        StartCoroutine(coolDown());
+    }
+
+    private IEnumerator coolDown()
+    {
+        isCd = true;
+        yield return new WaitForSeconds(shootCd);
+        isCd = false;
     }
 
 }
