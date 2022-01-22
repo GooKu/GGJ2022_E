@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         ShowScore();
         m_CountdownSystem.GameResultEvent += SetGameResultAndGoToResultScene;
 
-        if(so.GameMode == GameMode.StoryMod)
+        if(so.GameMode == GameMode.StoryMode)
         {
             var autoPlayer = gameObject.AddComponent<AutoPlayer>();
             autoPlayer.Bind(p2.Player);
@@ -87,7 +87,15 @@ public class GameManager : MonoBehaviour
     public void SetGameResultAndGoToResultScene()
     {
         m_GameResult.GetFinalBothScore(p1.Score, p2.Score);
-        m_SceneController.SwitchScene("StoryGameOver");
+
+        if(so.GameMode == GameMode.StoryMode)
+        {
+            m_SceneController.SwitchScene("StoryGameOver");
+        }
+        else if(so.GameMode == GameMode.MuletplayerMode)
+        {
+            m_SceneController.SwitchScene("PVPGameOver");
+        }
     }
 
     private void shoot(PlayerControl player)
