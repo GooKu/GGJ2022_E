@@ -7,6 +7,7 @@ public class CountdownSystem : MonoBehaviour
 {
     [SerializeField] private SceneController m_SceneController;
     [SerializeField] private float m_TotalTime;
+    [SerializeField] private GameResult m_GameResult;
     private float m_CurrentTime;
 
     public float CurrentTime { get => m_CurrentTime; set => m_CurrentTime = value; }
