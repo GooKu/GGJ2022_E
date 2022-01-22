@@ -8,9 +8,11 @@ public class CountdownSystem : MonoBehaviour
     [SerializeField] private SceneController m_SceneController;
     [SerializeField] private float m_TotalTime;
     [SerializeField] private GameResult m_GameResult;
+    private Action m_GameResultEvent;
     private float m_CurrentTime;
 
     public float CurrentTime { get => m_CurrentTime; set => m_CurrentTime = value; }
+    public Action GameResultEvent { get => m_GameResultEvent; set => m_GameResultEvent = value; }
 
     private void Start()
     {
@@ -26,6 +28,6 @@ public class CountdownSystem : MonoBehaviour
     public IEnumerator StartCountdown()
     {
         yield return new WaitUntil(() => m_CurrentTime <= 0);
-        m_SceneController.SwitchScene("StoryGameOver");
+        GameResultEvent.Invoke();
     }
 }

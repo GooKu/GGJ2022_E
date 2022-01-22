@@ -29,11 +29,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private PlayerSettings p2 = null;
 
+    [SerializeField] private CountdownSystem m_CountdownSystem;
+    [SerializeField] private GameResult m_GameResult;
+    [SerializeField] private SceneController m_SceneController;
+
+
     private void Start()
     {
         Init(p1);
         Init(p2);
         ShowScore();
+        m_CountdownSystem.GameResultEvent += SetGameResultAndGoToResultScene;
     }
 
     public void Init(PlayerSettings setting)
@@ -68,6 +74,12 @@ public class GameManager : MonoBehaviour
         p1.Score -= 1;
         p2.Score += 1;
         ShowScore();
+    }
+
+    public void SetGameResultAndGoToResultScene()
+    {
+        m_GameResult.GetFinalBothScore(p1.Score, p2.Score);
+        m_SceneController.SwitchScene("StoryGameOver");
     }
 
     private void shoot(PlayerControl player)

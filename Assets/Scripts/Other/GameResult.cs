@@ -36,7 +36,7 @@ public class GameResult : MonoBehaviour
         }
         else if(m_P1Score == m_P2Score)
         {
-            m_EndType.StoryEndType = StoryEndType.NormalEnd;
+            m_EndType.StoryEndType = StoryEndType.TrueEnd;
         }
     }
 }

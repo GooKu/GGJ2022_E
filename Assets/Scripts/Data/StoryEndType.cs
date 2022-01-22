@@ -5,6 +5,6 @@ using UnityEngine;
 public enum StoryEndType
 {
     BadEnd,
-    NormalEnd,
+    TrueEnd,
     HappyEnd
 }
