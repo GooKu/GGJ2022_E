@@ -1,12 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class InputManager : MonoBehaviour
 {
-    public void InputGroupEvent()
-    {
+    [SerializeField] private Tilemap m_Tilemap;
 
+    public void InputGroupEvent(PlayerType playerType)
+    {
+        if (playerType == PlayerType.P1)
+        {
+            Player1Input();
+        }
+        else if(playerType == PlayerType.P2)
+        {
+            Player2Input();
+        }
     }
 
     private void Player1Input()
@@ -39,5 +49,10 @@ public class InputManager : MonoBehaviour
         {
 
         }
+    }
+
+    private void Move(Vector2 direction)
+    {
+        
     }
 }

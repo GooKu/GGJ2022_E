@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-
+        Move();
     }
 
     private void Move()
     {
-        
+        m_InputManager.InputGroupEvent(m_Player);
     }
+
+
 }
