@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    [SerializeField] private PlayerType m_Player = PlayerType.P1;
+    [SerializeField] private InputManager m_InputManager;
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Debug.Log("test");
-        }
+
     }
 
     private void Move()
