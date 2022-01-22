@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class StartGameSetting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameModeSO m_GameModeSO;
+    [SerializeField] private SceneController m_SceneController;
+
+    public void StoryMode()
     {
-        
+        m_GameModeSO.GameMode = GameMode.StoryMode;
+        m_SceneController.SwitchScene("Story");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MultplayerMode()
     {
-        
+        m_GameModeSO.GameMode = GameMode.MuletplayerMode;
+        m_SceneController.SwitchScene("Game");
     }
 }

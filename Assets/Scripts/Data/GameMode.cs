@@ -4,6 +4,6 @@ using UnityEngine;
 
 public enum GameMode
 {
-    StoryMod,
-    MultplayerMod
+    StoryMode,
+    MuletplayerMode
 }
