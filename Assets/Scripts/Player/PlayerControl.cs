@@ -43,7 +43,6 @@ public class PlayerControl : MonoBehaviour
 
     public void MoveUp()
     {
-        Debug.Log(m_CurrentPlayerPosition.y);
         if(m_CurrentPlayerPosition.y < m_TopTilemap)
         {
             m_CurrentPlayerPosition = m_CurrentPlayerPosition + new Vector3Int(0, 1, 0);
@@ -53,7 +52,6 @@ public class PlayerControl : MonoBehaviour
 
     public void MoveDown()
     {
-        Debug.Log(m_CurrentPlayerPosition.y);
         if (m_CurrentPlayerPosition.y > m_ButtonTilemap)
         {
             m_CurrentPlayerPosition = m_CurrentPlayerPosition + new Vector3Int(0, -1, 0);
@@ -63,7 +61,7 @@ public class PlayerControl : MonoBehaviour
 
     public void Shoot()
     {
-
+        Debug.Log(m_Player.ToString() + "Shooting");
     }
 
 }

@@ -32,7 +32,7 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-
+            m_PlayerControl.Shoot();
         }
     }
 
@@ -48,7 +48,7 @@ public class InputManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
-
+            m_PlayerControl.Shoot();
         }
     }
 }
