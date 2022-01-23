@@ -9,7 +9,6 @@ public class PlayerControl : MonoBehaviour
     public event Action<PlayerControl> OnShootEvent;
 
     [SerializeField] private PlayerType m_Player = PlayerType.P1;
-    [SerializeField] private InputManager m_InputManager;
     [SerializeField] private Tilemap m_Tilemap;
     [SerializeField] private int m_TopTilemap = 4;
     [SerializeField] private int m_ButtonTilemap = -4;
@@ -35,16 +34,6 @@ public class PlayerControl : MonoBehaviour
             m_CurrentPlayerPosition = new Vector3Int(6, 0, 0);
             transform.position = m_Tilemap.GetCellCenterWorld(m_CurrentPlayerPosition);
         }
-    }
-
-    private void Update()
-    {
-        Move();
-    }
-
-    private void Move()
-    {
-        m_InputManager.InputGroupEvent(m_Player);
     }
 
     public void MoveUp()

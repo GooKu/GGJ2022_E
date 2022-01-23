@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CountdownSystem m_CountdownSystem;
     [SerializeField] private GameResult m_GameResult;
     [SerializeField] private SceneController m_SceneController;
+    [SerializeField] private InputManager m_inputManager;
 
 
     private void Start()
@@ -42,11 +43,17 @@ public class GameManager : MonoBehaviour
         ShowScore();
         m_CountdownSystem.GameResultEvent += SetGameResultAndGoToResultScene;
 
-        if(so.GameMode == GameMode.StoryMode)
+        m_inputManager.SettingP1(p1.Player);
+
+        if (so.GameMode == GameMode.StoryMode)
         {
             var autoPlayer = gameObject.AddComponent<AutoPlayer>();
             autoPlayer.Bind(p2.Player);
             autoPlayer.Run();
+        }
+        else
+        {
+            m_inputManager.SettingP2(p2.Player);
         }
     }
 
