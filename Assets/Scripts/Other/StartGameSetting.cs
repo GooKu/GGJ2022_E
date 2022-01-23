@@ -19,7 +19,7 @@ public class StartGameSetting : MonoBehaviour
             Instantiate(m_MusicPrefab);
         }
 
-        MusicController.Instance.ChangeBGM(MusicController.AudioType.NormalStartBGM);
+        MusicController.Instance.ChangeBGM(MusicController.AudioType.StartBGM);
 
         if (m_EndType.StoryEndType == StoryEndType.BadEnd)
         {

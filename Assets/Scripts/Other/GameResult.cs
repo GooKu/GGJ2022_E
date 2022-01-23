@@ -16,6 +16,7 @@ public class GameResult : MonoBehaviour
 
     private void Start()
     {
+        MusicController.Instance.ChangeBGM(MusicController.AudioType.InGameBGM);
         if (m_EndType == null)
         {
             m_EndType = (StoryEnd) Resources.Load("StoryEnd", typeof(StoryEnd));
