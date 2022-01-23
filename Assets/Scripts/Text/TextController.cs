@@ -195,7 +195,7 @@ public class TextController : MonoBehaviour
 
         ChangeSceneEvent?.Invoke();
         ChangeSceneEvent = null;
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.5f);
 
         TextEndEvent?.Invoke();
         TextEndEvent = null;
