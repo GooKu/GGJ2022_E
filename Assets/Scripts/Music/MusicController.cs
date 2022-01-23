@@ -31,6 +31,7 @@ public class MusicController : MonoBehaviour
     #region Variable
 
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceSE;
 
     [SerializeField] private AudioClip startGameBGM;
     [SerializeField] private AudioClip inGameBGM;
@@ -38,6 +39,9 @@ public class MusicController : MonoBehaviour
     [SerializeField] private AudioClip happyEndBGM;
     [SerializeField] private AudioClip trueEndBGM;
     [SerializeField] private AudioClip badEndBGM;
+
+    [SerializeField] private AudioClip explosionSE;
+    [SerializeField] private AudioClip laughSE;
 
     #endregion
 
@@ -51,6 +55,12 @@ public class MusicController : MonoBehaviour
         HappyEndBGM,
         TrueEndBGM,
         BadEndBGM,
+    }
+
+    public enum SEType
+    {
+        Explosion,
+        Laugh,
     }
 
     #endregion
@@ -73,6 +83,12 @@ public class MusicController : MonoBehaviour
         audioSource.Play();
     }
 
+    public void PlaySE(SEType type)
+    {
+        audioSourceSE.clip = GetSEAudioTypeClip(type);
+        audioSourceSE.Play();
+    }
+
     #endregion
 
     #region Private function
@@ -91,6 +107,19 @@ public class MusicController : MonoBehaviour
                 return trueEndBGM;
             case AudioType.BadEndBGM:
                 return badEndBGM;
+            default:
+                return null;
+        }
+    }
+
+    AudioClip GetSEAudioTypeClip(SEType type)
+    {
+        switch (type)
+        {
+            case SEType.Explosion:
+                return explosionSE;
+            case SEType.Laugh:
+                return laughSE;
             default:
                 return null;
         }

@@ -12,6 +12,7 @@ public class StoryGameOverSetting : MonoBehaviour
 
     // Happy End
     [SerializeField] private GameObject m_HappyEndObject;
+    [SerializeField] private GameObject m_HappyEndBG;
 
     // Bad End
     [SerializeField] private GameObject m_BadEndObject;
@@ -39,12 +40,15 @@ public class StoryGameOverSetting : MonoBehaviour
         m_Popup.SetActive(false);
         if (m_StoryEnd.StoryEndType == StoryEndType.HappyEnd)
         {
+            m_HappyEndBG.SetActive(false);
+
             //m_EndText.text = "快樂結局";
             m_HappyEndObject.SetActive(true);
             m_BadEndObject.SetActive(false);
             m_TrueEndObject.SetActive(false);
             m_EndTitle.sprite = m_HappyEndSprite;
 
+            TextController.Instance.ChangeSceneEvent += () => m_HappyEndBG.SetActive(true);
             TextController.Instance.HappyEndText(m_EndText);
         }
         else if (m_StoryEnd.StoryEndType == StoryEndType.BadEnd)

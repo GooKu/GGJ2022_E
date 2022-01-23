@@ -11,10 +11,8 @@ public class Bullet : MonoBehaviour
 
     public PlayerType Player => playerType;
 
-    [SerializeField]
-    private PlayerType playerType;
-    [SerializeField]
-    private float speed = 5;
+    [SerializeField] private PlayerType playerType;
+    [SerializeField] private float speed = 5;
 
     private Tilemap map;
 
@@ -39,7 +37,7 @@ public class Bullet : MonoBehaviour
             return;
         }
 
-        if(coor.x != currentX)
+        if (coor.x != currentX)
         {
             OnTileChangeEvent?.Invoke(coor, playerType);
             coor.x = currentX;
@@ -53,17 +51,25 @@ public class Bullet : MonoBehaviour
             case Tags.Bullet:
                 var bullet = collision.gameObject.GetComponent<Bullet>();
 
-                if(bullet.Player == Player) { return; }
+                if (bullet.Player == Player)
+                {
+                    return;
+                }
 
+                MusicController.Instance.PlaySE(MusicController.SEType.Explosion);
                 Destroy(gameObject);
                 break;
             case Tags.Player:
                 var player = collision.gameObject.GetComponent<PlayerControl>();
 
-                if (player.Player == Player) { return; }
+                if (player.Player == Player)
+                {
+                    return;
+                }
 
                 OnHitPlayerEvent?.Invoke(this, player);
 
+                MusicController.Instance.PlaySE(MusicController.SEType.Explosion);
                 Destroy(gameObject);
                 break;
         }

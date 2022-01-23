@@ -136,6 +136,10 @@ public class TextController : MonoBehaviour
         text.text = "我們要永遠在一起玩哦~";
         yield return waitForSeconds;
 
+        ChangeSceneEvent?.Invoke();
+        ChangeSceneEvent = null;
+
+        MusicController.Instance.PlaySE(MusicController.SEType.Laugh);
         text.text = "呵呵...呵呵呵...哈哈哈哈哈哈哈哈哈哈哈";
         yield return waitForSeconds;
 
