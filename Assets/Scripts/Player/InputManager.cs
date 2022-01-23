@@ -5,50 +5,51 @@ using UnityEngine.Tilemaps;
 
 public class InputManager : MonoBehaviour
 {
-    [SerializeField] private Tilemap m_Tilemap;
-    [SerializeField] private PlayerControl m_PlayerControl;
+    private PlayerControl p1;
+    private PlayerControl p2;
 
-    public void InputGroupEvent(PlayerType playerType)
+    public void SettingP1(PlayerControl p1)
     {
-        if (playerType == PlayerType.P1)
-        {
-            Player1Input();
-        }
-        else if(playerType == PlayerType.P2)
-        {
-            Player2Input();
-        }
+        this.p1 = p1;
     }
 
-    private void Player1Input()
+    public void SettingP2(PlayerControl p2)
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            m_PlayerControl.MoveUp();
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            m_PlayerControl.MoveDown();
-        }
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            m_PlayerControl.Shoot();
-        }
+        this.p2 = p2;
     }
 
-    private void Player2Input()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (p1)
         {
-            m_PlayerControl.MoveUp();
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                p1.MoveUp();
+            }
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                p1.MoveDown();
+            }
+            if (Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                p1.Shoot();
+            }
         }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+
+        if (p2)
         {
-            m_PlayerControl.MoveDown();
-        }
-        if (Input.GetKeyDown(KeyCode.RightControl))
-        {
-            m_PlayerControl.Shoot();
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                p2.MoveUp();
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                p2.MoveDown();
+            }
+            if (Input.GetKeyDown(KeyCode.RightControl))
+            {
+                p2.Shoot();
+            }
         }
     }
 }
