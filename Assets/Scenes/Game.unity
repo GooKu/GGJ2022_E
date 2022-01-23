@@ -266,7 +266,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 473128557282967400, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
       propertyPath: m_TotalTime
-      value: 20
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 473128557282967400, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
       propertyPath: m_GameResult
