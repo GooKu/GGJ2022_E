@@ -1939,6 +1939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GameModeSO: {fileID: 11400000, guid: c66755a202217024199958f951eade2e, type: 2}
   m_SceneController: {fileID: 1417670752}
+  m_MusicPrefab: {fileID: 749292979453351040, guid: 4351a8a2b39008a48bf639111522c292, type: 3}
 --- !u!4 &1952795419
 Transform:
   m_ObjectHideFlags: 0

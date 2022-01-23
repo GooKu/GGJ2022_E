@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - MusicController
   layers:
   - Default
   - TransparentFX

@@ -13,9 +13,9 @@ public class GameResult : MonoBehaviour
 
     private void Start()
     {
-        if(m_EndType == null)
+        if (m_EndType == null)
         {
-            m_EndType = (StoryEnd)Resources.Load("StoryEnd" , typeof(StoryEnd));
+            m_EndType = (StoryEnd) Resources.Load("StoryEnd", typeof(StoryEnd));
         }
     }
 
@@ -45,16 +45,19 @@ public class GameResult : MonoBehaviour
 
     private void CheckFinalEnd()
     {
-        if(m_P1Score > m_P2Score)
+        if (m_P1Score > m_P2Score)
         {
+            MusicController.Instance.ChangeBGM(MusicController.AudioType.HappyEndBGM);
             m_EndType.StoryEndType = StoryEndType.HappyEnd;
         }
-        else if(m_P1Score < m_P2Score)
+        else if (m_P1Score < m_P2Score)
         {
+            MusicController.Instance.ChangeBGM(MusicController.AudioType.BadEndBGM);
             m_EndType.StoryEndType = StoryEndType.BadEnd;
         }
-        else if(m_P1Score == m_P2Score)
+        else if (m_P1Score == m_P2Score)
         {
+            MusicController.Instance.ChangeBGM(MusicController.AudioType.TrueEndBGM);
             m_EndType.StoryEndType = StoryEndType.TrueEnd;
         }
     }
