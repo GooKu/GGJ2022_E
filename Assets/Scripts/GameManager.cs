@@ -105,6 +105,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
+
     private void shoot(PlayerControl player)
     {
         var setting = player.Player == PlayerType.P1 ? p1 : p2;

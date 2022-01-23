@@ -6,6 +6,8 @@ using UnityEngine;
 public class GameResult : MonoBehaviour
 {
     [SerializeField] StoryEnd m_EndType;
+    [SerializeField] private WinPlayerSO m_WinPlayerSO;
+
     private int m_P1Score = 0;
     private int m_P2Score = 0;
 
@@ -22,6 +24,23 @@ public class GameResult : MonoBehaviour
         m_P1Score = p1;
         m_P2Score = p2;
         CheckFinalEnd();
+        CheckFinalWhoWin();
+    }
+
+    private void CheckFinalWhoWin()
+    {
+        if (m_P1Score > m_P2Score)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.P1Win;
+        }
+        else if (m_P1Score < m_P2Score)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.P2Win;
+        }
+        else if (m_P1Score == m_P2Score)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.Tie;
+        }
     }
 
     private void CheckFinalEnd()
