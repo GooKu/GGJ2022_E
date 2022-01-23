@@ -32,8 +32,8 @@ public class MusicController : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
 
-    [SerializeField] private AudioClip startGameBGM1;
-    [SerializeField] private AudioClip startGameBGM2;
+    [SerializeField] private AudioClip startGameBGM;
+    [SerializeField] private AudioClip inGameBGM;
 
     [SerializeField] private AudioClip happyEndBGM;
     [SerializeField] private AudioClip trueEndBGM;
@@ -46,8 +46,8 @@ public class MusicController : MonoBehaviour
 
     public enum AudioType
     {
-        NormalStartBGM,
-        TrueStartBGM,
+        StartBGM,
+        InGameBGM,
         HappyEndBGM,
         TrueEndBGM,
         BadEndBGM,
@@ -81,10 +81,10 @@ public class MusicController : MonoBehaviour
     {
         switch (audioType)
         {
-            case AudioType.NormalStartBGM:
-                return startGameBGM1;
-            case AudioType.TrueStartBGM:
-                return startGameBGM2;
+            case AudioType.StartBGM:
+                return startGameBGM;
+            case AudioType.InGameBGM:
+                return inGameBGM;
             case AudioType.HappyEndBGM:
                 return happyEndBGM;
             case AudioType.TrueEndBGM:

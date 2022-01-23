@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 749292979453351043}
-  startGameBGM1: {fileID: 8300000, guid: 789b980b6597d1c4bb1ec88a9cded343, type: 3}
-  startGameBGM2: {fileID: 8300000, guid: a3841b249f093ba4e8cc5c17219abb39, type: 3}
-  happyEndBGM: {fileID: 8300000, guid: 506c4222fcd3c38489a2b1f84a0bcfb4, type: 3}
+  startGameBGM: {fileID: 8300000, guid: a3841b249f093ba4e8cc5c17219abb39, type: 3}
+  inGameBGM: {fileID: 8300000, guid: 4bf74209ce02a6b47914c9f3e793698a, type: 3}
+  happyEndBGM: {fileID: 8300000, guid: b034fb3f0d81d19488c44790d9c75f27, type: 3}
   trueEndBGM: {fileID: 8300000, guid: acccf22c7a76aa04c825fe6eced872a3, type: 3}
   badEndBGM: {fileID: 8300000, guid: f8da29f14fd201b438f2266756938883, type: 3}
 --- !u!82 &749292979453351043
