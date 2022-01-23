@@ -31,21 +31,21 @@ public class GameResult : MonoBehaviour
     //    CheckFinalWhoWin();
     //}
 
-    //private void CheckFinalWhoWin()
-    //{
-    //    if (m_P1Score > m_P2Score)
-    //    {
-    //        m_WinPlayerSO.WinPlayer = WinPlayer.P1Win;
-    //    }
-    //    else if (m_P1Score < m_P2Score)
-    //    {
-    //        m_WinPlayerSO.WinPlayer = WinPlayer.P2Win;
-    //    }
-    //    else if (m_P1Score == m_P2Score)
-    //    {
-    //        m_WinPlayerSO.WinPlayer = WinPlayer.Tie;
-    //    }
-    //}
+    private void CheckFinalWhoWin()
+    {
+        if (m_PlayerType == PlayerType.P1)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.P1Win;
+        }
+        else if (m_PlayerType == PlayerType.P2)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.P2Win;
+        }
+        else if (m_PlayerType == PlayerType.Non)
+        {
+            m_WinPlayerSO.WinPlayer = WinPlayer.Tie;
+        }
+    }
 
     private void CheckFinalEnd()
     {
@@ -82,6 +82,7 @@ public class GameResult : MonoBehaviour
     {
         m_PlayerType = playerType;
         CheckFinalEnd();
+        CheckFinalWhoWin();
         SetSceneChange();
     }
 }
