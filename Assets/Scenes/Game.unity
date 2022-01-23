@@ -264,6 +264,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 131473871}
     m_Modifications:
+    - target: {fileID: 473128557242748253, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 69494d9e4008a7842bba9aca2b2581dc, type: 3}
     - target: {fileID: 473128557282967400, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
       propertyPath: m_TotalTime
       value: 60
@@ -811,7 +815,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 69494d9e4008a7842bba9aca2b2581dc, type: 3}
     m_FontSize: 64
     m_FontStyle: 1
     m_BestFit: 0
@@ -891,7 +895,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 69494d9e4008a7842bba9aca2b2581dc, type: 3}
     m_FontSize: 64
     m_FontStyle: 1
     m_BestFit: 0
