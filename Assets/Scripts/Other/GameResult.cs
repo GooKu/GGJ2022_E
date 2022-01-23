@@ -61,4 +61,9 @@ public class GameResult : MonoBehaviour
             m_EndType.StoryEndType = StoryEndType.TrueEnd;
         }
     }
+
+    public void SetWinner(PlayerType playerType)
+    {
+        //TODO:
+    }
 }
