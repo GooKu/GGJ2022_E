@@ -21,14 +21,11 @@ public class GameManager : MonoBehaviour
             ScoreText.text = Score.ToString();
         }
     }
-    [SerializeField]
-    private GameModeSO so = null;
-    [SerializeField]
-    private Tilemap map = null;
-    [SerializeField]
-    private PlayerSettings p1 = null;
-    [SerializeField]
-    private PlayerSettings p2 = null;
+
+    [SerializeField] private GameModeSO so = null;
+    [SerializeField] private Tilemap map = null;
+    [SerializeField] private PlayerSettings p1 = null;
+    [SerializeField] private PlayerSettings p2 = null;
 
     [SerializeField] private CountdownSystem m_CountdownSystem;
     [SerializeField] private GameResult m_GameResult;
@@ -74,11 +71,14 @@ public class GameManager : MonoBehaviour
         var tile = map.GetTile(coor);
         var playerSetting = player == PlayerType.P1 ? p1 : p2;
 
-        if(tile == playerSetting.Tile) { return; }
+        if (tile == playerSetting.Tile)
+        {
+            return;
+        }
 
         map.SetTile(coor, playerSetting.Tile);
 
-        if(player == PlayerType.P1)
+        if (player == PlayerType.P1)
         {
             p1.Score += 1;
             p2.Score -= 1;
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
     {
         //m_GameResult.SetFinalResult(p1.Score, p2.Score);
         CheckFinalWhoWin();
-        
+
         //if(so.GameMode == GameMode.StoryMode)
         //{
         //    m_SceneController.SwitchScene("StoryGameOver");
@@ -104,6 +104,24 @@ public class GameManager : MonoBehaviour
         //{
         //    m_SceneController.SwitchScene("PVPGameOver");
         //}
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.T))
+        {
+            m_GameResult.SetWinner(PlayerType.P1);
+        }
+
+        if (Input.GetKey(KeyCode.G))
+        {
+            m_GameResult.SetWinner(PlayerType.P2);
+        }
+
+        if (Input.GetKey(KeyCode.B))
+        {
+            m_GameResult.SetWinner(PlayerType.Non);
+        }
     }
 
     private void CheckFinalWhoWin()
