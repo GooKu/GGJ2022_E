@@ -265,6 +265,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 131473871}
     m_Modifications:
     - target: {fileID: 473128557282967400, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
+      propertyPath: m_TotalTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 473128557282967400, guid: 58ec1f4b4728f2f4b8136e7c293681e0, type: 3}
       propertyPath: m_GameResult
       value: 
       objectReference: {fileID: 2113156634}
@@ -368,7 +372,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 194692756}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: af7ec862df8052145bd5cc839ea8978e, type: 3}
   m_Name: 
