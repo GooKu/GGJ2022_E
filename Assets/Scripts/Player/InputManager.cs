@@ -30,7 +30,7 @@ public class InputManager : MonoBehaviour
             {
                 p1.MoveDown();
             }
-            if (Input.GetKeyDown(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 p1.Shoot();
             }
@@ -46,7 +46,7 @@ public class InputManager : MonoBehaviour
             {
                 p2.MoveDown();
             }
-            if (Input.GetKeyDown(KeyCode.RightControl))
+            if (Input.GetKeyDown(KeyCode.L))
             {
                 p2.Shoot();
             }
