@@ -2222,6 +2222,7 @@ GameObject:
   - component: {fileID: 1156454519}
   - component: {fileID: 1156454521}
   - component: {fileID: 1156454520}
+  - component: {fileID: 1156454522}
   m_Layer: 5
   m_Name: Normal
   m_TagString: Untagged
@@ -2330,6 +2331,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1156454522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156454518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8785e477b2c8fb4b80b19fc87bafbd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventInAnimation:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1952795418}
+        m_TargetAssemblyTypeName: StartGameSetting, Assembly-CSharp
+        m_MethodName: StoryMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1168743001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,18 +2531,6 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: coverchange
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1952795418}
-        m_TargetAssemblyTypeName: StartGameSetting, Assembly-CSharp
-        m_MethodName: StoryMode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1186368108
@@ -2805,7 +2821,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1384476326}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -3180,7 +3196,6 @@ GameObject:
   - component: {fileID: 1693466758}
   - component: {fileID: 1693466760}
   - component: {fileID: 1693466759}
-  - component: {fileID: 1693466761}
   m_Layer: 5
   m_Name: NormalBG
   m_TagString: Untagged
@@ -3246,26 +3261,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1693466757}
   m_CullTransparentMesh: 1
---- !u!95 &1693466761
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693466757}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bebd4c89e1c2de247805c8f56703082d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1699113645
 GameObject:
   m_ObjectHideFlags: 0
