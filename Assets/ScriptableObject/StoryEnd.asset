@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e0a6c6137686342960adf77be63f81, type: 3}
   m_Name: StoryEnd
   m_EditorClassIdentifier: 
-  m_StoryEndType: 0
+  m_StoryEndType: 1

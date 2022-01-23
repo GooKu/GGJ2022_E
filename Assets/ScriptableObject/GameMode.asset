@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameMode
   m_EditorClassIdentifier: 
   m_GameMode: 0
-  m_StartSceneMode: 1
+  m_StartSceneMode: 0
