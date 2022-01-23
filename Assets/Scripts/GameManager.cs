@@ -105,13 +105,18 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     private void shoot(PlayerControl player)
     {
         var setting = player.Player == PlayerType.P1 ? p1 : p2;
         var bullet = GameObject.Instantiate(setting.bullet, setting.Player.transform.position, Quaternion.identity);
         bullet.OnTileChangeEvent += UpdateTile;
+        bullet.OnHitPlayerEvent += hitPlayer;
         bullet.Init(map);
+    }
+
+    private void hitPlayer(Bullet bullet, PlayerControl player)
+    {
+        var winner = player.Player == PlayerType.P1 ? PlayerType.P2 : PlayerType.P1;
+        m_GameResult.SetWinner(winner);
     }
 }
