@@ -93,15 +93,32 @@ public class GameManager : MonoBehaviour
 
     public void SetGameResultAndGoToResultScene()
     {
-        m_GameResult.SetFinalResult(p1.Score, p2.Score);
+        //m_GameResult.SetFinalResult(p1.Score, p2.Score);
+        CheckFinalWhoWin();
+        
+        //if(so.GameMode == GameMode.StoryMode)
+        //{
+        //    m_SceneController.SwitchScene("StoryGameOver");
+        //}
+        //else if(so.GameMode == GameMode.MuletplayerMode)
+        //{
+        //    m_SceneController.SwitchScene("PVPGameOver");
+        //}
+    }
 
-        if(so.GameMode == GameMode.StoryMode)
+    private void CheckFinalWhoWin()
+    {
+        if (p1.Score > p2.Score)
         {
-            m_SceneController.SwitchScene("StoryGameOver");
+            m_GameResult.SetWinner(PlayerType.P1);
         }
-        else if(so.GameMode == GameMode.MuletplayerMode)
+        else if (p1.Score < p2.Score)
         {
-            m_SceneController.SwitchScene("PVPGameOver");
+            m_GameResult.SetWinner(PlayerType.P2);
+        }
+        else if (p1.Score == p2.Score)
+        {
+            m_GameResult.SetWinner(PlayerType.Non);
         }
     }
 
