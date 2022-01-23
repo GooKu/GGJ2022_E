@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void SetGameResultAndGoToResultScene()
     {
-        m_GameResult.GetFinalBothScore(p1.Score, p2.Score);
+        m_GameResult.SetFinalResult(p1.Score, p2.Score);
 
         if(so.GameMode == GameMode.StoryMode)
         {

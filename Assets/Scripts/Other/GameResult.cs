@@ -7,7 +7,10 @@ public class GameResult : MonoBehaviour
 {
     [SerializeField] StoryEnd m_EndType;
     [SerializeField] private WinPlayerSO m_WinPlayerSO;
+    [SerializeField] private GameModeSO m_GameModeSO;
+    [SerializeField] private SceneController m_SceneController;
 
+    private PlayerType m_PlayerType;
     private int m_P1Score = 0;
     private int m_P2Score = 0;
 
@@ -19,7 +22,7 @@ public class GameResult : MonoBehaviour
         }
     }
 
-    public void GetFinalBothScore(int p1, int p2)
+    public void SetFinalResult(int p1, int p2)
     {
         m_P1Score = p1;
         m_P2Score = p2;
@@ -62,8 +65,20 @@ public class GameResult : MonoBehaviour
         }
     }
 
+    private void SetSceneChange()
+    {
+        if (m_GameModeSO.GameMode == GameMode.StoryMode)
+        {
+            m_SceneController.SwitchScene("StoryGameOver");
+        }
+        else if (m_GameModeSO.GameMode == GameMode.MuletplayerMode)
+        {
+            m_SceneController.SwitchScene("PVPGameOver");
+        }
+    }
+
     public void SetWinner(PlayerType playerType)
     {
-        //TODO:
+        m_PlayerType = playerType;
     }
 }
