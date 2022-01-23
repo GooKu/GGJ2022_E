@@ -35,6 +35,10 @@ public class TextController : MonoBehaviour
     #region Variable
 
     private WaitForSeconds waitForSeconds = new WaitForSeconds(5.0f);
+    private Coroutine storyStartCor;
+    private Coroutine happyCor;
+    private Coroutine trueCor;
+    private Coroutine badCor;
 
     #endregion
 
@@ -42,22 +46,48 @@ public class TextController : MonoBehaviour
 
     public void StoryStartText(Text text)
     {
-        StartCoroutine(ShowStoryStartText(text));
+        storyStartCor = StartCoroutine(ShowStoryStartText(text));
     }
 
     public void HappyEndText(Text text)
     {
-        StartCoroutine(ShowHappyEndText(text));
+        happyCor = StartCoroutine(ShowHappyEndText(text));
     }
 
     public void TrueEndText(Text text)
     {
-        StartCoroutine(ShowTrueEndText(text));
+        trueCor = StartCoroutine(ShowTrueEndText(text));
     }
 
     public void BadEndText(Text text)
     {
-        StartCoroutine(ShowBadEndText(text));
+        badCor = StartCoroutine(ShowBadEndText(text));
+    }
+
+    public void Skip()
+    {
+        if (storyStartCor != null)
+        {
+            StopCoroutine(storyStartCor);
+        }
+
+        if (happyCor != null)
+        {
+            StopCoroutine(happyCor);
+        }
+
+        if (trueCor != null)
+        {
+            StopCoroutine(trueCor);
+        }
+
+        if (badCor != null)
+        {
+            StopCoroutine(badCor);
+        }
+
+        TextEndEvent?.Invoke();
+        ChangeSceneEvent?.Invoke();
     }
 
     public void RegisterTextEndEvent(Action action)
@@ -88,7 +118,7 @@ public class TextController : MonoBehaviour
         text.text = "來～讓我們開始吧";
         yield return waitForSeconds;
 
-        TextEndEvent.Invoke();
+        TextEndEvent?.Invoke();
         TextEndEvent = null;
     }
 
@@ -109,7 +139,7 @@ public class TextController : MonoBehaviour
         text.text = "呵呵...呵呵呵...哈哈哈哈哈哈哈哈哈哈哈";
         yield return waitForSeconds;
 
-        TextEndEvent.Invoke();
+        TextEndEvent?.Invoke();
         TextEndEvent = null;
     }
 
@@ -121,7 +151,7 @@ public class TextController : MonoBehaviour
         text.text = "(轉頭)你怎麼了！發生什麼事！為什麼衣服上都是血！";
         yield return waitForSeconds;
 
-        ChangeSceneEvent.Invoke();
+        ChangeSceneEvent?.Invoke();
         ChangeSceneEvent = null;
 
         text.text = "我...不...什麼...怎麼會...";
@@ -135,7 +165,7 @@ public class TextController : MonoBehaviour
         text.text = "對不起對不起對不起對不起對不起對不起對不起對不起 都怪我 對不起對不起對不起 太愛你了 對不起對不起對不起對不起對不起";
         yield return waitForSeconds;
 
-        TextEndEvent.Invoke();
+        TextEndEvent?.Invoke();
         TextEndEvent = null;
     }
 
@@ -159,11 +189,11 @@ public class TextController : MonoBehaviour
         yield return waitForSeconds;
 
 
-        ChangeSceneEvent.Invoke();
+        ChangeSceneEvent?.Invoke();
         ChangeSceneEvent = null;
         yield return new WaitForSeconds(1.0f);
 
-        TextEndEvent.Invoke();
+        TextEndEvent?.Invoke();
         TextEndEvent = null;
     }
 

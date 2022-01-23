@@ -22,8 +22,8 @@ public class StorySetting : MonoBehaviour
         sceneController.SwitchScene("Game");
     }
 
-    private void OnDestroy()
+    public void ClickSkipButton()
     {
-        TextController.Instance.TextEndEvent -= StoryEnd;
+        TextController.Instance.Skip();
     }
 }

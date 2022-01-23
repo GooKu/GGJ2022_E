@@ -8,6 +8,7 @@ public class StoryGameOverSetting : MonoBehaviour
 {
     [SerializeField] private StoryEnd m_StoryEnd;
     [SerializeField] private Text m_EndText;
+    [SerializeField] private GameObject m_SkipButton;
 
     // Happy End
     [SerializeField] private GameObject m_HappyEndObject;
@@ -74,13 +75,14 @@ public class StoryGameOverSetting : MonoBehaviour
         }
     }
 
+    public void ClickSkipButton()
+    {
+        TextController.Instance.Skip();
+    }
+
     void StoryEnd()
     {
         m_Popup.SetActive(true);
-    }
-
-    private void OnDestroy()
-    {
-        TextController.Instance.TextEndEvent -= StoryEnd;
+        m_SkipButton.SetActive(false);
     }
 }
