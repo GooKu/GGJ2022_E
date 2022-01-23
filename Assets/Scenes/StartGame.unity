@@ -1922,7 +1922,7 @@ GameObject:
   - component: {fileID: 1019458714}
   - component: {fileID: 1019458713}
   m_Layer: 5
-  m_Name: Left Ctrl
+  m_Name: L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4025,7 +4025,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -4036,9 +4036,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Left
-
-    Ctrl'
+  m_Text: A
 --- !u!222 &1901988324
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4361,7 +4359,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -4372,9 +4370,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Right
-
-    Ctrl'
+  m_Text: L
 --- !u!222 &1962164740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4685,7 +4681,7 @@ GameObject:
   - component: {fileID: 2071853583}
   - component: {fileID: 2071853582}
   m_Layer: 5
-  m_Name: Left Ctrl
+  m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
